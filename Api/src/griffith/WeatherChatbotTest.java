@@ -7,10 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherChatbotTest {
 
+    private WeatherChatbot chatbot; // Declare chatbot as a field of the class
+
     // Set up common objects or state before each test
     @BeforeEach
     void setUp() {
         // Initialize necessary objects and prepare test environment
+        chatbot = new WeatherChatbot();
     }
 
     // Clean up after each test
