@@ -19,6 +19,7 @@ class WeatherChatbotTest {
     // Clean up after each test
     @AfterEach
     void tearDown() {
+    	chatbot = null;
         // Clean up test environment and dispose of objects
     }
 
