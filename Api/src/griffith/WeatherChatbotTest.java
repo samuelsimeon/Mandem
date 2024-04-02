@@ -26,8 +26,11 @@ class WeatherChatbotTest {
         // Call the fetchWeather method with a location
             String weatherData = WeatherChatbot.fetchWeather("Ireland");
 
-            // Check if the weather data is not null
+            // Checking if the weather data is not null
             assertNotNull(weatherData);
+        // Checking if the weather data contains temperature and humidity
+        assertTrue(weatherData.contains("temperature"), "Weather data should contain temperature");
+        assertTrue(weatherData.contains("humidity"), "Weather data should contain humidity");
     }
 
     // Test case for the suggestClothing method
