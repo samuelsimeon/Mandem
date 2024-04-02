@@ -23,7 +23,11 @@ class WeatherChatbotTest {
     @Test
     void testFetchWeather() {
         // Implement test for fetchWeather method
-    	//Saviour and Samuel will implement this 
+        // Call the fetchWeather method with a location
+            String weatherData = WeatherChatbot.fetchWeather("Ireland");
+
+            // Check if the weather data is not null
+            assertNotNull(weatherData);
     }
 
     // Test case for the suggestClothing method
