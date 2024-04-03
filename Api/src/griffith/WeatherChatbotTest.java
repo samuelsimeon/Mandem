@@ -37,8 +37,7 @@ class WeatherChatbotTest {
         assertTrue(weatherData.contains("humidity"), "Weather data should contain humidity");
     }
 
-    // Test case for the suggestClothing method
-    @Test
+      @Test
     void testSuggestClothing() {
     	    // Simulate different weather conditions and test the clothing suggestions
     	    String coldWeather = "cold";
