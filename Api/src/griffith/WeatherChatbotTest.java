@@ -40,8 +40,18 @@ class WeatherChatbotTest {
     // Test case for the suggestClothing method
     @Test
     void testSuggestClothing() {
-        // Implement test for suggestClothing method
-        // Omotayo and Samuel
+    	    // Simulate different weather conditions and test the clothing suggestions
+    	    String coldWeather = "cold";
+    	   
+
+    	    // Call the suggestClothing method for cold weather
+    	    String coldWeatherSuggestion = chatbot.suggestClothing(coldWeather);
+    	    // Check if the suggestion is appropriate for cold weather
+    	    assertNotNull(coldWeatherSuggestion, "Clothing suggestion for cold weather should not be null");
+    	    assertTrue(coldWeatherSuggestion.toLowerCase().contains("coat") || coldWeatherSuggestion.toLowerCase().contains("jacket"), "Clothing suggestion for cold weather should include 'coat' or 'jacket'");
+
+    	  
+
     }
 
 }
