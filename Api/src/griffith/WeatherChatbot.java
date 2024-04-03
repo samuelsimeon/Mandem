@@ -20,9 +20,16 @@ public class WeatherChatbot {
      */ 
  // Samuel will implement this method
     public static String fetchWeather(String location) {
-        // This method will build the API request URL, make the request to the weather API,
-        // handle the response, and return the weather data as a string.
-        return null; 
+        try {
+            // Build the API URL with the location and API key
+            String apiUrl = String.format(BASE_URL, location, API_KEY);
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        return location;
     }
 
     /**
