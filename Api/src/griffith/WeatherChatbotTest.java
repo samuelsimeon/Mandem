@@ -1,5 +1,6 @@
-package griffith;
+package Api.src.griffith;
 
+import Api.src.griffith.WeatherChatbot;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,7 @@ class WeatherChatbotTest {
     void testFetchWeather() {
         // Implement test for fetchWeather method
         // Call the fetchWeather method with a location
-            String weatherData = WeatherChatbot.fetchWeather("Ireland");
+            String weatherData = String.valueOf(WeatherChatbot.fetchWeather("Ireland"));
 
             // Checking if the weather data is not null
             assertNotNull(weatherData);
@@ -38,32 +39,30 @@ class WeatherChatbotTest {
     }
 
       @Test
-    void testSuggestClothing() {
-    	    // Simulate different weather conditions and test the clothing suggestions
-    	    String coldWeather = "cold";
-    	    String mildWeather = "mild";
-    	    String hotWeather = "hot";
+      void testSuggestClothing() {
+          // Simulate different weather conditions and test the clothing suggestions
+          WeatherData coldWeather = new WeatherData("cold");
+          WeatherData mildWeather = new WeatherData("mild");
+          WeatherData hotWeather = new WeatherData("hot");
 
-    	    // Call the suggestClothing method for cold weather
-    	    String coldWeatherSuggestion = chatbot.suggestClothing(coldWeather);
-    	    // Check if the suggestion is appropriate for cold weather
-    	    assertNotNull(coldWeatherSuggestion, "Clothing suggestion for cold weather should not be null");
-    	    assertTrue(coldWeatherSuggestion.toLowerCase().contains("coat") || coldWeatherSuggestion.toLowerCase().contains("jacket"), "Clothing suggestion for cold weather should include 'coat' or 'jacket'");
+          // Call the suggestClothing method for cold weather
+          String coldWeatherSuggestion = WeatherChatbot.suggestClothing(coldWeather);
+          // Check if the suggestion is appropriate for cold weather
+          assertNotNull(coldWeatherSuggestion, "Clothing suggestion for cold weather should not be null");
+          assertTrue(coldWeatherSuggestion.toLowerCase().contains("coat") || coldWeatherSuggestion.toLowerCase().contains("jacket"), "Clothing suggestion for cold weather should include 'coat' or 'jacket'");
 
-    	    // Call the suggestClothing method for mild weather
-    	    String mildWeatherSuggestion = chatbot.suggestClothing(mildWeather);
-    	    // Check if the suggestion is appropriate for mild weather
-    	    assertNotNull(mildWeatherSuggestion, "Clothing suggestion for mild weather should not be null");
-    	    assertTrue(mildWeatherSuggestion.toLowerCase().contains("sweater") || mildWeatherSuggestion.toLowerCase().contains("long-sleeve"), "Clothing suggestion for mild weather should include 'sweater' or 'long-sleeve'");
+          // Call the suggestClothing method for mild weather
+          String mildWeatherSuggestion = WeatherChatbot.suggestClothing(mildWeather);
+          // Check if the suggestion is appropriate for mild weather
+          assertNotNull(mildWeatherSuggestion, "Clothing suggestion for mild weather should not be null");
+          assertTrue(mildWeatherSuggestion.toLowerCase().contains("sweater") || mildWeatherSuggestion.toLowerCase().contains("long-sleeve"), "Clothing suggestion for mild weather should include 'sweater' or 'long-sleeve'");
 
-    	    // Call the suggestClothing method for hot weather
-    	    String hotWeatherSuggestion = chatbot.suggestClothing(hotWeather);
-    	    // Check if the suggestion is appropriate for hot weather
-    	    assertNotNull(hotWeatherSuggestion, "Clothing suggestion for hot weather should not be null");
-    	    assertTrue(hotWeatherSuggestion.toLowerCase().contains("shorts") || hotWeatherSuggestion.toLowerCase().contains("t-shirt"), "Clothing suggestion for hot weather should include 'shorts' or 't-shirt'");
-    	
-
-    }
+          // Call the suggestClothing method for hot weather
+          String hotWeatherSuggestion = WeatherChatbot.suggestClothing(hotWeather);
+          // Check if the suggestion is appropriate for hot weather
+          assertNotNull(hotWeatherSuggestion, "Clothing suggestion for hot weather should not be null");
+          assertTrue(hotWeatherSuggestion.toLowerCase().contains("shorts") || hotWeatherSuggestion.toLowerCase().contains("t-shirt"), "Clothing suggestion for hot weather should include 'shorts' or 't-shirt'");
+      }
 
 }
 
