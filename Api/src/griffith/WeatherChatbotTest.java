@@ -46,7 +46,7 @@ class WeatherChatbotTest {
 
     	    // Call the suggestClothing method for cold weather
     	    String coldWeatherSuggestion = chatbot.suggestClothing(coldWeather);
-    	    // Check if the suggestion is appropriate for cold weather
+    	    
     	    assertNotNull(coldWeatherSuggestion, "Clothing suggestion for cold weather should not be null");
     	    assertTrue(coldWeatherSuggestion.toLowerCase().contains("coat") || coldWeatherSuggestion.toLowerCase().contains("jacket"), "Clothing suggestion for cold weather should include 'coat' or 'jacket'");
 
