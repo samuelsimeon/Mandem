@@ -24,6 +24,16 @@ public class WeatherChatbot {
             // Build the API URL with the location and API key
             String apiUrl = String.format(BASE_URL, location, API_KEY);
 
+            // Create a URL object
+            URL url = new URL(apiUrl);
+
+            // Open a connection
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+            // Set request method
+            connection.setRequestMethod("GET");
+
+
 
         } catch (Exception e) {
             e.printStackTrace();
