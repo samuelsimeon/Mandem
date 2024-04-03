@@ -33,13 +33,33 @@ public class WeatherChatbot {
             // Set request method
             connection.setRequestMethod("GET");
 
+            // Get the response code
+            int responseCode = connection.getResponseCode();
 
+            // Checking if the response code is successful
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                // Read response
+                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder response = new StringBuilder();
+                String line;
+
+                while ((line = in.readLine()) != null) {
+                    response.append(line);
+                }
+                in.close();
+
+                // Return the weather data as string
+                return response.toString();
+            } else {
+                // If the response code is not successful, return null
+                return null;
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
-        return location;
+
     }
 
     /**
