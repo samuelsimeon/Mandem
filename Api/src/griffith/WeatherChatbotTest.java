@@ -42,16 +42,21 @@ class WeatherChatbotTest {
     void testSuggestClothing() {
     	    // Simulate different weather conditions and test the clothing suggestions
     	    String coldWeather = "cold";
-    	   
-
+    	    String mildWeather = "mild";
+    	  
     	    // Call the suggestClothing method for cold weather
     	    String coldWeatherSuggestion = chatbot.suggestClothing(coldWeather);
-    	    
+    	    // Check if the suggestion is appropriate for cold weather
     	    assertNotNull(coldWeatherSuggestion, "Clothing suggestion for cold weather should not be null");
     	    assertTrue(coldWeatherSuggestion.toLowerCase().contains("coat") || coldWeatherSuggestion.toLowerCase().contains("jacket"), "Clothing suggestion for cold weather should include 'coat' or 'jacket'");
 
-    	  
+    	    // Call the suggestClothing method for mild weather
+    	    String mildWeatherSuggestion = chatbot.suggestClothing(mildWeather);
+    	    // Check if the suggestion is appropriate for mild weather
+    	    assertNotNull(mildWeatherSuggestion, "Clothing suggestion for mild weather should not be null");
+    	    assertTrue(mildWeatherSuggestion.toLowerCase().contains("sweater") || mildWeatherSuggestion.toLowerCase().contains("long-sleeve"), "Clothing suggestion for mild weather should include 'sweater' or 'long-sleeve'");
 
+    	    
     }
 
 }
