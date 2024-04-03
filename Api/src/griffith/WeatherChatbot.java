@@ -10,7 +10,7 @@ public class WeatherChatbot {
 	
     // Constants for API key and base URL
     private static final String API_KEY = "HBBklX5K1UUwqJXCW7V3BKdomOtOGEVI"; 
-    private static final String BASE_URL = "https://api.tomorrow.io/v4/weather/realtime?location=%s&apikey=%s"; 
+    private static final String BASE_URL = "https://api.tomorrow.io/v4/weather/realtime?location=Ireland&apikey=HBBklX5K1UUwqJXCW7V3BKdomOtOGEVI"; 
 
     /**
      * Fetches weather data from the API.
@@ -18,48 +18,11 @@ public class WeatherChatbot {
      * @param location The location for which to fetch the weather.
      * @return A string containing the weather data.
      */ 
- // Saviour will implement this method
+ // Samuel will implement this method
     public static String fetchWeather(String location) {
-        try {
-            // Build the API URL with the location and API key
-            String apiUrl = String.format(BASE_URL, location, API_KEY);
-
-            // Create a URL object
-            URL url = new URL(apiUrl);
-
-            // Open a connection
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-            // Set request method
-            connection.setRequestMethod("GET");
-
-            // Get the response code
-            int responseCode = connection.getResponseCode();
-
-            // Checking if the response code is successful
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                // Read response
-                BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-                StringBuilder response = new StringBuilder();
-                String line;
-
-                while ((line = in.readLine()) != null) {
-                    response.append(line);
-                }
-                in.close();
-
-                // Return the weather data as string
-                return response.toString();
-            } else {
-                // If the response code is not successful, return null
-                return null;
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-
+        // This method will build the API request URL, make the request to the weather API,
+        // handle the response, and return the weather data as a string.
+        return null; 
     }
 
     /**
@@ -68,64 +31,22 @@ public class WeatherChatbot {
      * @param weatherData The weather data.
      * @return A string containing clothing suggestions.
      */
- //Omotayo will implement this method
-   
-    	public static String suggestClothing(String weatherCondition) {
-    	    // Check the weather condition and suggest clothing accordingly
-    	    if (weatherCondition == null || weatherCondition.isEmpty()) {
-    	        return "Weather condition is not provided.";
-    	    }
-
-    	    String suggestion;
-    	    switch (weatherCondition.toLowerCase()) {
-    	        case "cold":
-    	            suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
-    	            break;
-    	        case "mild":
-    	            suggestion = "Recommended clothing for mild weather: Sweater, long-sleeved shirt, and light jacket.";
-    	            break;
-    	        case "hot":
-    	            suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses.";
-    	            break;
-    	        default:
-    	            suggestion = "No specific clothing suggestion available for the weather condition: " + weatherCondition;
-    	            break;
-    	    }
-
-    	    return suggestion;
-    	}
-
+ // Omotayo will implement this method
+    public static String suggestClothing(String weatherData) {
+        // This method should interpret the weather data and return a string with clothing suggestions.
+        return null; 
+    }
 
     /**
      * Main method for chatbot interaction.
      * 
      * @param args Command line arguments (not used).
      */
-    // Samuel will implement this section
-    	public static void main(String[] args) {
-    	    // Create a BufferedReader to read input from the console
-    	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    	    
-    	    try {
-    	        // Ask the user for their location
-    	        System.out.println("Please enter your location (e.g., city name, country):");
-    	        String location = reader.readLine().trim();
-
-    	        // Fetch the weather data for the given location
-    	        String weatherData = fetchWeather(location);
-
-    	        // Here, you might want to parse the weatherData to find the weather condition
-    	        // For now, let's assume the fetchWeather method directly returns a simple weather condition string like "cold", "mild", or "hot"
-    	        
-    	        // Get clothing suggestions based on the weather condition
-    	        String clothingSuggestion = suggestClothing(weatherData);
-
-    	        // Display the clothing suggestions
-    	        System.out.println(clothingSuggestion);
-    	    } catch (Exception e) {
-    	        e.printStackTrace();
-    	    }
-    	}
-
+    // Saviour will implement this section
+    public static void main(String[] args) {
+        // This section should handle user interaction, including asking for user input (location),
+        // calling the fetchWeather method, getting clothing suggestions from the suggestClothing method,
+        // and displaying the results to the user.
+    }
 }
 
