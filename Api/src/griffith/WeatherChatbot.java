@@ -68,11 +68,33 @@ public class WeatherChatbot {
      * @param weatherData The weather data.
      * @return A string containing clothing suggestions.
      */
- // Omotayo will implement this method
-    public static String suggestClothing(String weatherData) {
-        // This method should interpret the weather data and return a string with clothing suggestions.
-        return null; 
-    }
+ //Omotayo will implement this method
+   
+    	public static String suggestClothing(String weatherCondition) {
+    	    // Check the weather condition and suggest clothing accordingly
+    	    if (weatherCondition == null || weatherCondition.isEmpty()) {
+    	        return "Weather condition is not provided.";
+    	    }
+
+    	    String suggestion;
+    	    switch (weatherCondition.toLowerCase()) {
+    	        case "cold":
+    	            suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
+    	            break;
+    	        case "mild":
+    	            suggestion = "Recommended clothing for mild weather: Sweater, long-sleeved shirt, and light jacket.";
+    	            break;
+    	        case "hot":
+    	            suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses.";
+    	            break;
+    	        default:
+    	            suggestion = "No specific clothing suggestion available for the weather condition: " + weatherCondition;
+    	            break;
+    	    }
+
+    	    return suggestion;
+    	}
+
 
     /**
      * Main method for chatbot interaction.
