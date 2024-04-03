@@ -10,7 +10,7 @@ public class WeatherChatbot {
 	
     // Constants for API key and base URL
     private static final String API_KEY = "HBBklX5K1UUwqJXCW7V3BKdomOtOGEVI"; 
-    private static final String BASE_URL = "https://api.tomorrow.io/v4/weather/realtime?location=Ireland&apikey=HBBklX5K1UUwqJXCW7V3BKdomOtOGEVI"; 
+    private static final String BASE_URL = "https://api.tomorrow.io/v4/weather/realtime?location=%s&apikey=%s"; 
 
     /**
      * Fetches weather data from the API.
@@ -18,7 +18,7 @@ public class WeatherChatbot {
      * @param location The location for which to fetch the weather.
      * @return A string containing the weather data.
      */ 
- // Samuel will implement this method
+ // Saviour will implement this method
     public static String fetchWeather(String location) {
         try {
             // Build the API URL with the location and API key
@@ -101,11 +101,31 @@ public class WeatherChatbot {
      * 
      * @param args Command line arguments (not used).
      */
-    // Saviour will implement this section
-    public static void main(String[] args) {
-        // This section should handle user interaction, including asking for user input (location),
-        // calling the fetchWeather method, getting clothing suggestions from the suggestClothing method,
-        // and displaying the results to the user.
-    }
+    // Samuel will implement this section
+    	public static void main(String[] args) {
+    	    // Create a BufferedReader to read input from the console
+    	    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    	    
+    	    try {
+    	        // Ask the user for their location
+    	        System.out.println("Please enter your location (e.g., city name, country):");
+    	        String location = reader.readLine().trim();
+
+    	        // Fetch the weather data for the given location
+    	        String weatherData = fetchWeather(location);
+
+    	        // Here, you might want to parse the weatherData to find the weather condition
+    	        // For now, let's assume the fetchWeather method directly returns a simple weather condition string like "cold", "mild", or "hot"
+    	        
+    	        // Get clothing suggestions based on the weather condition
+    	        String clothingSuggestion = suggestClothing(weatherData);
+
+    	        // Display the clothing suggestions
+    	        System.out.println(clothingSuggestion);
+    	    } catch (Exception e) {
+    	        e.printStackTrace();
+    	    }
+    	}
+
 }
 
