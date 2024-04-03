@@ -40,7 +40,7 @@ public class WeatherChatbot {
 					response.append(line);
 				}
 				in.close();
-
+				//Implemented gson
 				Gson gson = new Gson();
 				JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
 
