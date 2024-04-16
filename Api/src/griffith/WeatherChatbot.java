@@ -92,15 +92,7 @@ public class WeatherChatbot {
 
 
 
-				// Categorize weather condition based on temperature
-				String weatherCondition;
-				if (temperature <= 15) {
-					weatherCondition = "cold";
-				} else if (temperature <= 25) {
-					weatherCondition = "mild";
-				} else {
-					weatherCondition = "hot";
-				}
+
 
 				//.............................
 				System.out.println(temperature);
