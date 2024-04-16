@@ -18,6 +18,10 @@ package Api.src.griffith;
 
 //Saviour will implement this method
 public class WeatherData {
+    private double temperature;
+    private double humidity;
+    private double windSpeed;
+    private double rainLevel;
     private final String weatherCondition;
 
     public WeatherData(String weatherCondition) {
