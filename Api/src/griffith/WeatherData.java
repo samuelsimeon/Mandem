@@ -11,8 +11,8 @@ package Api.src.griffith;
  *
  * Responsibilities:
  * - Implement the new fields (temperature, humidity, wind speed, weatherDescription) with appropriate data types.
- * - Update the constructor to initialize these new fields and to set weatherCondition based on the calculated value from temperature.
- * - Implement the private method `determineWeatherCondition(double temperature)` to categorize temperature into 'cold', 'mild', or 'hot'.
+ * - Update the constructor to initialize these new fields and to set weatherCondition based on the calculated value from temperature windspeed and rain level.
+ * - Implement the private method `determineWeatherCondition(double temperature, .......... e.t.c)` to categorize temperature into 'cold', 'mild', or 'hot' etc.
  * - Ensure that all data fields are properly encapsulated with public getter methods.
  */
 
