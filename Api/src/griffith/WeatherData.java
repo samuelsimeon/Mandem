@@ -74,6 +74,23 @@ public class WeatherData {
     }
 
 
+    // Getters
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public double getHumidity() {
+        return humidity;
+    }
+
+    public double getWindSpeed() {
+        return windSpeed;
+    }
+
+    public double getRainLevel() {
+        return rainLevel;
+    }
+
     public String getWeatherCondition() {
         return weatherCondition;
     }
