@@ -77,6 +77,8 @@ public class WeatherChatbot {
 					response.append(line);
 				}
 				in.close();
+				//.......................................................
+				System.out.println(response);
 				//Implemented gson
 				Gson gson = new Gson();
 				JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
@@ -84,6 +86,11 @@ public class WeatherChatbot {
 				JsonObject dataObject = jsonObject.getAsJsonObject("data");
 				JsonObject valuesObject = dataObject.getAsJsonObject("values");
 				double temperature = valuesObject.get("temperature").getAsDouble(); // Assuming temperature is in Celsius
+				double humidity = valuesObject.get("humidity").getAsDouble();
+				double windSpeed = valuesObject.get("windSpeed").getAsDouble();
+				double rainLevel = valuesObject.get("rainIntensity").getAsDouble();
+
+
 
 				// Categorize weather condition based on temperature
 				String weatherCondition;
@@ -95,6 +102,7 @@ public class WeatherChatbot {
 					weatherCondition = "hot";
 				}
 
+				//.............................
 				System.out.println(temperature);
 				return new WeatherData(weatherCondition);
 			} else {
