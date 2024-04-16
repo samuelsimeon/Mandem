@@ -28,6 +28,52 @@ public class WeatherData {
         this.weatherCondition = weatherCondition;
     }
 
+    // Method to determine weather condition based on temperature, rain and wind speed
+    private String determineWeatherCondition(double temperature, double rainLevel, double windSpeed) {
+        // Checking for cold conditions
+        if (temperature <= 12) {
+            if (rainLevel >= 2 && windSpeed > 20) {
+                return "veryCold&Stormy";
+            } else if (rainLevel >= 2) {
+                return "veryCold&Raining";
+            } else if (windSpeed > 20) {
+                return "veryCold&Windy";
+            } else {
+                return "veryCold";
+            }
+        }
+
+        // Checking for warm conditions
+        else if (temperature >= 13 && temperature <= 19) {
+            if (rainLevel >= 2 && windSpeed > 20) {
+                return "warm&Stormy";
+            } else if (rainLevel >= 2) {
+                return "warm&Raining";
+            } else if (windSpeed > 20) {
+                return "warm&Windy";
+            } else {
+                return "warm";
+            }
+        }
+
+        // Checking for hot conditions
+        else if (temperature > 20) {
+            if (rainLevel >= 2 && windSpeed > 20) {
+                return "hot&Stormy";
+            } else if (rainLevel >= 2) {
+                return "hot&Raining";
+            } else if (windSpeed > 20) {
+                return "hot&Windy";
+            } else {
+                return "hot";
+            }
+        }
+
+        // Default return statement if nothing else is matched
+        return "unknown";
+    }
+
+
     public String getWeatherCondition() {
         return weatherCondition;
     }
