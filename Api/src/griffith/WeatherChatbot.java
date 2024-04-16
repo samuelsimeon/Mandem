@@ -86,6 +86,9 @@ public class WeatherChatbot {
 				JsonObject dataObject = jsonObject.getAsJsonObject("data");
 				JsonObject valuesObject = dataObject.getAsJsonObject("values");
 				double temperature = valuesObject.get("temperature").getAsDouble(); // Assuming temperature is in Celsius
+
+				//This new code stores more data retrieved from the API
+
 				double humidity = valuesObject.get("humidity").getAsDouble();
 				double windSpeed = valuesObject.get("windSpeed").getAsDouble();
 				double rainLevel = valuesObject.get("rainIntensity").getAsDouble();
@@ -96,7 +99,8 @@ public class WeatherChatbot {
 
 				//.............................
 				System.out.println(temperature);
-				return new WeatherData(weatherCondition);
+				//This will create new instances of WeatherData class
+				return new WeatherData(temperature, "Generate condition from temp", humidity, rainLevel, windSpeed);
 			} else {
 				System.out.println("HTTP error code: " + responseCode);
 				return null;
