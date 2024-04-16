@@ -100,7 +100,7 @@ public class WeatherChatbot {
 				//.............................
 				System.out.println(temperature);
 				//This will create new instances of WeatherData class
-				return new WeatherData(temperature, "Generate condition from temp", humidity, rainLevel, windSpeed);
+				return new WeatherData(temperature, humidity, windSpeed, rainLevel);
 			} else {
 				System.out.println("HTTP error code: " + responseCode);
 				return null;
