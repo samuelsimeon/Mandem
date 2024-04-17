@@ -136,9 +136,46 @@ public class WeatherChatbot {
 
 		String suggestion;
 		switch (weatherData.getWeatherCondition().toLowerCase()) {
-			case "cold":
+			case "veryCold":
+				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, thick long pants and a beanie.";
+				break;
+			case "veryCold&Stormy":
+				suggestion = "Recommended clothing for cold and stormy weather: An umbrella or Raincoat, Thermal layers, heavy coat, gloves, thick long pants, a beanie and a scarf.";
+				break;
+			case "veryCold&Windy":
+				suggestion = "Recommended clothing for cold and windy weather: Thermal layers, heavy coat, gloves, thick long pants, a beanie and a scarf.";
+				break;
+			case "veryCold&Raining":
+				suggestion = "Recommended clothing for cold weather: An umbrella, Thermal layers, heavy coat, gloves, thick long pants and a beanie.";
+				break;
+
+			case "Warm":
+				suggestion = "Recommended clothing for warm weather: Light layers, light coat or layered hoodie or a sweatshirt.";
+				break;
+			case "warm&Stormy":
+				suggestion = "Recommended clothing for warm weather: An umbrella, light-thick layers, thick coat or jacket or layered hoodie or a sweatshirt";
+				break;
+			case "warm&Windy":
+				suggestion = "Recommended clothing for warm weather: light-thick layers, heavy coat, gloves, and a beanie.";
+				break;
+			case "warm&Raining":
+				suggestion = "Recommended clothing for cold weather: light-thick layers, heavy coat, gloves, and a beanie.";
+				break;
+
+			case "hot":
 				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
 				break;
+			case "hot&Stormy":
+				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
+				break;
+			case "hot&Windy":
+				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
+				break;
+			case "hot&Raining":
+				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
+				break;
+
+
 			case "mild":
 				suggestion = "Recommended clothing for mild weather: Sweater, long-sleeved shirt, and light jacket.";
 				break;
