@@ -93,6 +93,13 @@ class WeatherChatbotTest {
 
 
 
+          // Test for hot and windy weather
+          WeatherData hotWindy = new WeatherData(30, 50, 20, 0);  // High temperature with significant wind
+          assertEquals("Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses with a light jacket(optional)",
+                  WeatherChatbot.suggestClothing(hotWindy),
+                  "Clothing suggestion for hot and windy weather does not match expected.");
+
+
 
       }
 
