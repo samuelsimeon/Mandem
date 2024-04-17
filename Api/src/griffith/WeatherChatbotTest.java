@@ -51,6 +51,9 @@ class WeatherChatbotTest {
         assertTrue(weatherData.getWindSpeed() >= 0, "Wind speed should be fetched and not be zero.");
         assertTrue(weatherData.getRainLevel() >= 0, "Rain level should be fetched be zero or greater than zero.");
 
+        // Checking the weather condition string is not empty or null
+        assertNotNull(weatherData.getWeatherCondition(), "Weather condition should be determined and not null.");
+        assertFalse(weatherData.getWeatherCondition().isEmpty(), "Weather condition should not be an empty string.");
 
 
 
