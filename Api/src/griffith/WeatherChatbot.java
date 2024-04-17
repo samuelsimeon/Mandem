@@ -135,7 +135,7 @@ public class WeatherChatbot {
 		}
 
 		String suggestion;
-		switch (weatherData.getWeatherCondition().toLowerCase()) {
+		switch (weatherData.getWeatherCondition()) {
 			case "veryCold":
 				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, thick long pants and a beanie.";
 				break;
@@ -163,25 +163,18 @@ public class WeatherChatbot {
 				break;
 
 			case "hot":
-				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
-				break;
-			case "hot&Stormy":
-				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
-				break;
-			case "hot&Windy":
-				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
-				break;
-			case "hot&Raining":
-				suggestion = "Recommended clothing for cold weather: Thermal layers, heavy coat, gloves, and a beanie.";
-				break;
-
-
-			case "mild":
-				suggestion = "Recommended clothing for mild weather: Sweater, long-sleeved shirt, and light jacket.";
-				break;
-			case "hot":
 				suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses.";
 				break;
+			case "hot&Stormy":
+				suggestion = "Recommended clothing for hot weather: An umbrella, shorts and a t-shirt, light dresses with a light jacket.";
+				break;
+			case "hot&Windy":
+				suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses with a light jacket(optional)";
+				break;
+			case "hot&Raining":
+				suggestion = "Recommended clothing for hot weather: Recommended clothing for hot weather: An umbrella, shorts and a t-shirt, or light dresses.";
+				break;
+
 			default:
 				suggestion = "No specific clothing suggestion available for the weather condition: " + weatherData.getWeatherCondition();
 				break;
