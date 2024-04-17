@@ -206,6 +206,15 @@ public class WeatherChatbot {
 			String[] locations = new String[totalVisits];
 			String[] days = new String[totalVisits];
 
+			// Collect user input for locations and days
+			for (int i = 0; i < totalVisits; i++) {
+				System.out.println("Enter location " + (i + 1) + " (e.g., city name, country):");
+				locations[i] = reader.readLine().trim();
+
+				System.out.println("What day will you visit this location? (day1, day2, or day3):");
+				days[i] = reader.readLine().trim();
+			}
+
 
 		} catch (IOException e) {
 			System.out.println("Error reading input from user.");
