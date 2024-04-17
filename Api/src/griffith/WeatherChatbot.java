@@ -150,16 +150,16 @@ public class WeatherChatbot {
 				break;
 
 			case "Warm":
-				suggestion = "Recommended clothing for warm weather: Light layers, light coat or layered hoodie or a sweatshirt.";
+				suggestion = "Recommended clothing for warm weather: Light layers, light coat or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 			case "warm&Stormy":
-				suggestion = "Recommended clothing for warm weather: An umbrella, light-thick layers, thick coat or jacket or layered hoodie or a sweatshirt";
+				suggestion = "Recommended clothing for warm weather: An umbrella or raincoat, light-thick layers, thick coat or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred";
 				break;
 			case "warm&Windy":
-				suggestion = "Recommended clothing for warm weather: light-thick layers, heavy coat, gloves, and a beanie.";
+				suggestion = "Recommended clothing for warm weather: light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 			case "warm&Raining":
-				suggestion = "Recommended clothing for cold weather: light-thick layers, heavy coat, gloves, and a beanie.";
+				suggestion = "Recommended clothing for warm weather: An umbrella or raincoat, light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 
 			case "hot":
