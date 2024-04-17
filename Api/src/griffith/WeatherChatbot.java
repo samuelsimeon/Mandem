@@ -126,10 +126,12 @@ public class WeatherChatbot {
 	 */
 
 	public static String suggestClothing(WeatherData weatherData) {
+		//Checks if weather data is null
 		if (weatherData == null || weatherData.getWeatherCondition() == null || weatherData.getWeatherCondition().isEmpty()) {
 			return "Weather condition is not provided.";
 		}
 
+		//This part suggest clothing based of weather condition
 		String suggestion;
 		switch (weatherData.getWeatherCondition()) {
 			case "veryCold":
