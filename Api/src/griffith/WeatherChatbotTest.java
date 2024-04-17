@@ -78,9 +78,15 @@ class WeatherChatbotTest {
                   WeatherChatbot.suggestClothing(veryCold),
                   "Clothing suggestion for very cold weather does not match expected.");
 
+          // Test for very cold and stormy weather
+          WeatherData veryColdStormy = new WeatherData(-5, 50, 25, 10);  // Assume stormy implies high wind and some precipitation
+          assertEquals("Recommended clothing for cold and stormy weather: An umbrella or Raincoat, Thermal layers, heavy coat, gloves, thick long pants, a beanie and a scarf.",
+                  WeatherChatbot.suggestClothing(veryColdStormy),
+                  "Clothing suggestion for very cold and stormy weather does not match expected.");
 
 
 
-          }
+
+      }
 
       }
