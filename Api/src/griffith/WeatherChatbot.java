@@ -58,11 +58,11 @@ public class WeatherChatbot {
 	 * - Modify this method to not only fetch and parse the weather condition based on temperature but also to return the actual temperature alongside the categorized condition.
 	 * - Extract and include additional weather parameters such as humidity or wind speed if deemed relevant for the application.
 	 * - Ensure the method can handle any API errors gracefully and report back with useful error messages.
-	 * - Optimize the method for efficiency, perhaps by adding caching mechanisms to avoid unnecessary API calls for frequently requested locations.
 	 */
 
 	public static WeatherData fetchWeather(String location) {
 		try {
+			//Setting up connection to API
 			String apiUrl = String.format(BASE_URL, location, API_KEY);
 			URL url = new URL(apiUrl);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -70,6 +70,7 @@ public class WeatherChatbot {
 
 			int responseCode = connection.getResponseCode();
 			if (responseCode == HttpURLConnection.HTTP_OK) {
+				//Converting data from response to String
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 				StringBuilder response = new StringBuilder();
 				String line;
@@ -79,7 +80,7 @@ public class WeatherChatbot {
 				in.close();
 				//.......................................................
 				System.out.println(response);
-				//Implemented gson
+				//Implemented gson in code to parse data returned from the API
 				Gson gson = new Gson();
 				JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
 
