@@ -39,7 +39,7 @@ class WeatherChatbotTest {
     void testFetchWeather() {
 
         // has a bug and wont pass
-        // Define a test date, using a specific static date or generating a dynamic one
+        // adding a test date
         String testDate = "2023-10-01";  // Example static date
 
         // Fetch weather data with both location and date
@@ -54,7 +54,6 @@ class WeatherChatbotTest {
         // Check if the weather data contains valid humidity
         assertTrue(weatherData.getHumidity() > 0, "Humidity should be fetched and greater than zero.");
 
-        // Optionally check for wind speed and rain level if they are critical
         assertTrue(weatherData.getWindSpeed() >= 0, "Wind speed should be fetched and not be zero.");
         assertTrue(weatherData.getRainLevel() >= 0, "Rain level should be fetched and be zero or greater than zero.");
 
