@@ -31,6 +31,8 @@ public class WeatherData {
      * @param windSpeed Wind speed in m/s.
      * @param rainLevel Rain intensity in mm/h.
      */
+
+    //Initializes WeatherData with temperature, humidity, wind speed, rain level, and calculates the overall weather condition.
     public WeatherData(double temperature, double humidity, double windSpeed, double rainLevel) {
         this.temperature = temperature;
         this.humidity = humidity;
