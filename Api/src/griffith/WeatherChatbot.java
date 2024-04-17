@@ -215,6 +215,18 @@ public class WeatherChatbot {
 				days[i] = reader.readLine().trim();
 			}
 
+			// Fetch weather data and provide clothing suggestions for each location and day
+			for (int i = 0; i < totalVisits; i++) {
+				System.out.println("\nFetching weather data for: " + locations[i] + " on " + days[i]);
+				WeatherData weatherData = fetchWeather(locations[i], days[i]);
+
+				if (weatherData != null) {
+					String clothingSuggestion = suggestClothing(weatherData);
+					System.out.println("For " + locations[i] + " on " + days[i] + " (" + weatherData.getTemperature() + "°C): " + clothingSuggestion);
+				} else {
+					System.out.println("Failed to fetch weather data for " + locations[i] + " on " + days[i]);
+				}
+			}
 
 		} catch (IOException e) {
 			System.out.println("Error reading input from user.");
