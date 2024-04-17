@@ -43,7 +43,7 @@ class WeatherChatbotTest {
         String testDate = "2023-10-01";  // Example static date
 
         // Fetch weather data with both location and date
-        WeatherData weatherData = WeatherChatbot.fetchWeather("Ireland");
+        WeatherData weatherData = WeatherChatbot.fetchWeather("Ireland", testDate);
 
         // Assert that the fetched weather data is not null
         assertNotNull(weatherData, "The fetched weather data should not be null.");
