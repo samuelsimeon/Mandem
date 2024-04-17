@@ -5,6 +5,7 @@
 package Api.src.griffith;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -60,17 +61,17 @@ public class WeatherChatbot {
 	 * - Ensure the method can handle any API errors gracefully and report back with useful error messages.
 	 */
 
-	public static WeatherData fetchWeather(String location) {
+	public static WeatherData fetchWeather(String location, String date ) {
 		try {
-			//Setting up connection to API
-			String apiUrl = String.format(BASE_URL, location, API_KEY);
+			// Format the date for the API request
+			String dateParameter = "&startTime=" + date + "T00:00:00Z&endTime=" + date + "T23:59:59Z";
+			String apiUrl = String.format(BASE_URL, location, API_KEY) + dateParameter;
 			URL url = new URL(apiUrl);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 
 			int responseCode = connection.getResponseCode();
 			if (responseCode == HttpURLConnection.HTTP_OK) {
-				//Converting data from response to String
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 				StringBuilder response = new StringBuilder();
 				String line;
@@ -78,29 +79,17 @@ public class WeatherChatbot {
 					response.append(line);
 				}
 				in.close();
-				//.......................................................
-				System.out.println(response);
-				//Implemented gson in code to parse data returned from the API
+
+				// Parse the response
 				Gson gson = new Gson();
 				JsonObject jsonObject = gson.fromJson(response.toString(), JsonObject.class);
 
-				JsonObject dataObject = jsonObject.getAsJsonObject("data");
-				JsonObject valuesObject = dataObject.getAsJsonObject("values");
-				double temperature = valuesObject.get("temperature").getAsDouble(); // Assuming temperature is in Celsius
+				// Assume the JSON paths to the necessary data are correct:
+				double temperature = jsonObject.getAsJsonObject("data").getAsJsonObject("values").get("temperature").getAsDouble();
+				double humidity = jsonObject.getAsJsonObject("data").getAsJsonObject("values").get("humidity").getAsDouble();
+				double windSpeed = jsonObject.getAsJsonObject("data").getAsJsonObject("values").get("windSpeed").getAsDouble();
+				double rainLevel = jsonObject.getAsJsonObject("data").getAsJsonObject("values").get("rainIntensity").getAsDouble();
 
-				//This new code stores more data retrieved from the API
-
-				double humidity = valuesObject.get("humidity").getAsDouble();
-				double windSpeed = valuesObject.get("windSpeed").getAsDouble();
-				double rainLevel = valuesObject.get("rainIntensity").getAsDouble();
-
-
-
-
-
-				//.............................
-				System.out.println(temperature);
-				//This will create new instances of WeatherData class
 				return new WeatherData(temperature, humidity, windSpeed, rainLevel);
 			} else {
 				System.out.println("HTTP error code: " + responseCode);
@@ -110,6 +99,13 @@ public class WeatherChatbot {
 			e.printStackTrace();
 			return null;
 		}
+
+
+
+
+
+
+
 	}
 
 
@@ -200,25 +196,9 @@ public class WeatherChatbot {
 	 */
 
 	public static void main(String[] args) {
-		// Create a BufferedReader to read input from the console
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-		try {
-			// Ask the user for their location
-			System.out.println("Please enter your location (e.g., city name, country):");
-			String location = reader.readLine().trim();
 
-			// Fetch the weather data for the given location
-			WeatherData weatherData = fetchWeather(location);
 
-			// Get clothing suggestions based on the weather condition
-			String clothingSuggestion = suggestClothing(weatherData);
-
-			// Display the clothing suggestions
-			System.out.println(clothingSuggestion);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 

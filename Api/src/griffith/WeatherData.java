@@ -51,11 +51,11 @@ public class WeatherData {
 
         // Checking for cold conditions
         if (temperature <= 12) {
-            if (rainLevel >= 2 && windSpeed > 20) {
+            if (rainLevel >= 2 && windSpeed > 10) {
                 return "veryCold&Stormy";
             } else if (rainLevel >= 2) {
                 return "veryCold&Raining";
-            } else if (windSpeed > 20) {
+            } else if (windSpeed > 10) {
                 return "veryCold&Windy";
             } else {
                 return "veryCold";
@@ -63,11 +63,11 @@ public class WeatherData {
 
             //Checking for warm conditions
         } else if (temperature >= 13 && temperature <= 19) {
-            if (rainLevel >= 2 && windSpeed > 20) {
+            if (rainLevel >= 2 && windSpeed > 10) {
                 return "warm&Stormy";
             } else if (rainLevel >= 2) {
                 return "warm&Raining";
-            } else if (windSpeed > 20) {
+            } else if (windSpeed > 10) {
                 return "warm&Windy";
             } else {
                 return "warm";
@@ -75,11 +75,11 @@ public class WeatherData {
 
             //Checking for hot conditions
         } else if (temperature > 20) {
-            if (rainLevel >= 2 && windSpeed > 20) {
+            if (rainLevel >= 2 && windSpeed > 10) {
                 return "hot&Stormy";
             } else if (rainLevel >= 2) {
                 return "hot&Raining";
-            } else if (windSpeed >= 20) {
+            } else if (windSpeed >= 10) {
                 return "hot&Windy";
             } else {
                 return "hot";
