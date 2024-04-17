@@ -142,33 +142,33 @@ public class WeatherChatbot {
 				suggestion = "Recommended clothing for cold and windy weather: Thermal layers, heavy coat, gloves, thick long pants, a beanie and a scarf.";
 				break;
 			case "veryCold&Raining":
-				suggestion = "Recommended clothing for cold weather: An umbrella, Thermal layers, heavy coat, gloves, thick long pants and a beanie.";
+				suggestion = "Recommended clothing for cold and rainy weather: An umbrella, Thermal layers, heavy coat, gloves, thick long pants and a beanie.";
 				break;
 
 			case "Warm":
 				suggestion = "Recommended clothing for warm weather: Light layers, light coat or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 			case "warm&Stormy":
-				suggestion = "Recommended clothing for warm weather: An umbrella or raincoat, light-thick layers, thick coat or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred";
+				suggestion = "Recommended clothing for warm and stormy weather: An umbrella or raincoat, light-thick layers, thick coat or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred";
 				break;
 			case "warm&Windy":
-				suggestion = "Recommended clothing for warm weather: light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
+				suggestion = "Recommended clothing for warm and windy weather: light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 			case "warm&Raining":
-				suggestion = "Recommended clothing for warm weather: An umbrella or raincoat, light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
+				suggestion = "Recommended clothing for warm and rainy weather: An umbrella or raincoat, light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.";
 				break;
 
 			case "hot":
 				suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses.";
 				break;
 			case "hot&Stormy":
-				suggestion = "Recommended clothing for hot weather: An umbrella, shorts and a t-shirt, light dresses with a light jacket.";
+				suggestion = "Recommended clothing for hot and stormy weather: An umbrella, shorts and a t-shirt, light dresses with a light jacket.";
 				break;
 			case "hot&Windy":
-				suggestion = "Recommended clothing for hot weather: Shorts and a t-shirt, or light dresses with a light jacket(optional)";
+				suggestion = "Recommended clothing for hot and windy weather: Shorts and a t-shirt, or light dresses with a light jacket(optional)";
 				break;
 			case "hot&Raining":
-				suggestion = "Recommended clothing for hot weather: Recommended clothing for hot weather: An umbrella, shorts and a t-shirt, or light dresses.";
+				suggestion = "Recommended clothing for hot and raining weather: Recommended clothing for hot weather: An umbrella, shorts and a t-shirt, or light dresses.";
 				break;
 
 			default:
