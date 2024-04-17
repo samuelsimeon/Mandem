@@ -197,6 +197,21 @@ public class WeatherChatbot {
 
 	public static void main(String[] args) {
 
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		final int totalVisits = 5;  // this is the total number of location to visit
+
+		try {
+
+			// Arrays to store locations and days of the visit
+			String[] locations = new String[totalVisits];
+			String[] days = new String[totalVisits];
+
+
+		} catch (IOException e) {
+			System.out.println("Error reading input from user.");
+			e.printStackTrace();
+		}
+
 
 
 	}
