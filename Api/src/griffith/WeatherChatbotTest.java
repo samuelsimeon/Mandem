@@ -41,6 +41,16 @@ class WeatherChatbotTest {
 
         // Check if the weather data is not null
         assertNotNull(weatherData, "The fetched weather data should not be null.");
+        // Check if the weather data contains valid temperature
+        assertTrue(weatherData.getTemperature() >= -30, "Temperature should be -30 or greater.");
+
+        // Check if the weather data contains valid humidity
+        assertTrue(weatherData.getHumidity() != -20, "Humidity should be fetched and not be zero.");
+
+        // Optionally check for wind speed and rain level if they are critical
+        assertTrue(weatherData.getWindSpeed() >= 0, "Wind speed should be fetched and not be zero.");
+        assertTrue(weatherData.getRainLevel() >= 0, "Rain level should be fetched be zero or greater than zero.");
+
 
 
 
