@@ -49,7 +49,7 @@ public class WeatherData {
      */
     private String determineWeatherCondition(double temperature, double rainLevel, double windSpeed) {
 
-        // Checking for cold condituions
+        // Checking for cold conditions
         if (temperature <= 12) {
             if (rainLevel >= 2 && windSpeed > 20) {
                 return "veryCold&Stormy";
@@ -79,7 +79,7 @@ public class WeatherData {
                 return "hot&Stormy";
             } else if (rainLevel >= 2) {
                 return "hot&Raining";
-            } else if (windSpeed > 20) {
+            } else if (windSpeed >= 20) {
                 return "hot&Windy";
             } else {
                 return "hot";
