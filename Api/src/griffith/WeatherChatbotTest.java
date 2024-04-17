@@ -13,7 +13,7 @@ class WeatherChatbotTest {
     // Set up common objects or state before each test
     @BeforeEach
     void setUp() {
-        // Initialize necessary objects and prepare test environment
+        // Initialize necessary objects and prepare tests environment
         chatbot = new WeatherChatbot();
     }
 
