@@ -85,6 +85,13 @@ class WeatherChatbotTest {
                   "Clothing suggestion for very cold and stormy weather does not match expected.");
 
 
+          // Test for warm and rainy weather
+          WeatherData warmRaining = new WeatherData(15, 50, 10, 5);  // Moderate temperature with some rain
+          assertEquals("Recommended clothing for warm weather: An umbrella or raincoat, light-thick layers, light coat, or jacket or layered hoodie or a sweatshirt and a short or long pants as preferred.",
+                  WeatherChatbot.suggestClothing(warmRaining),
+                  "Clothing suggestion for warm and rainy weather does not match expected.");
+
+
 
 
       }
