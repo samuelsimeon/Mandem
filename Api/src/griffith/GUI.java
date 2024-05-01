@@ -1,6 +1,4 @@
 package Api.src.griffith;
-
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
