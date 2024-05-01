@@ -55,4 +55,24 @@ public class GUI {
         }
     }
 
+    // Method to fetch and display weather data.
+    private void fetchWeatherData(String location, String day) {
+        chatArea.append("Fetching weather data for: " + location + " on " + day + "...\n");
+        WeatherData weatherData = chatbot.fetchWeather(location, day);
+        if (weatherData != null) {
+            String suggestion = chatbot.suggestClothing(weatherData);
+            chatArea.append("For " + location + " on " + day + " (" + weatherData.getTemperature() + "°C): " + suggestion + "\n\n");
+        } else {
+            chatArea.append("Failed to fetch data for " + location + " on " + day + "\n\n");
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new GUI();
+            }
+        });
+    }
 }
