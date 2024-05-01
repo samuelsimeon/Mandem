@@ -41,5 +41,18 @@ public class GUI {
         frame.setVisible(true);
     }
 
+    // Method to handle the trip planning workflow.
+    private void planTrip() {
+        chatArea.setText(""); // Clear the chat area at the start of planning.
+        for (int i = 0; i < totalLocations; i++) {
+            String location = JOptionPane.showInputDialog(frame, "Enter location " + (i + 1) + " (e.g., city name, country):");
+            if (location != null && !location.trim().isEmpty()) {
+                String day = JOptionPane.showInputDialog(frame, "What day will you visit " + location + "? (day1, day2, or day3):");
+                if (day != null && !day.trim().isEmpty()) {
+                    fetchWeatherData(location.trim(), day.trim());
+                }
+            }
+        }
+    }
 
 }
