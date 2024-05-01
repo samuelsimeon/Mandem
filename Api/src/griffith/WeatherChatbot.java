@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import Api.src.griffith.WeatherData;
 import com.google.gson.Gson;
@@ -181,8 +183,49 @@ public class WeatherChatbot {
 		return suggestion;
 	}
 
+	public String getResponse(String userInput) {
+		// Split the user input by comma
+		String[] parts = userInput.split(",\\s*");
+		if (parts.length < 2) {
+			return "Please provide input in the format: Location, YYYY-MM-DD";
+		}
 
-    /**
+		String location = parts[0].trim();
+		String inputDate = parts[1].trim();
+
+		// Validate the date format
+		if (!isValidDate(inputDate)) {
+			return "Please enter the date in the format: YYYY-MM-DD";
+		}
+
+		WeatherData weatherData = fetchWeather(location, inputDate);
+		if (weatherData != null) {
+			return suggestClothing(weatherData);
+		} else {
+			return "I'm sorry, I couldn't fetch the weather data for your location.";
+		}
+	}
+
+	private boolean isValidDate(String inputDate) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(false);
+		try {
+			dateFormat.parse(inputDate);
+			return true;
+		} catch (ParseException e) {
+			return false;
+		}
+	}
+
+
+
+
+
+
+
+
+
+	/**
      * Main method for chatbot interaction.
      *
      * @param args Command line arguments (not used).
