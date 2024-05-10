@@ -22,9 +22,21 @@ public class GUI {
         }
         chatbot = new WeatherChatbot();
         frame = new JFrame("Weather Chatbot");
+        // sets width and height of gui pop up
+        frame.setMinimumSize(new Dimension(500, 400));
+
         chatArea = new JTextArea(16, 50);
         chatArea.setEditable(false);
+        // Sets font for text area
+        chatArea.setFont(new Font("Serif", Font.PLAIN, 16));
+        chatArea.setForeground(Color.BLUE);
+        // sets background for text area
+        chatArea.setBackground(Color.LIGHT_GRAY);
+        chatArea.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createEmptyBorder(10, 10, 10, 10),
+                BorderFactory.createLineBorder(Color.DARK_GRAY)));
         JScrollPane scrollPane = new JScrollPane(chatArea);
+
 
         startButton = new JButton("Plan My Trip");
         startButton.addActionListener(new ActionListener() {
