@@ -29,12 +29,12 @@ public class GUI {
         chatArea.setEditable(false);
         // Sets font for text area
         chatArea.setFont(new Font("Serif", Font.PLAIN, 16));
-        chatArea.setForeground(Color.BLUE);
+        chatArea.setForeground(Color.BLACK);
         // sets background for text area
-        chatArea.setBackground(Color.LIGHT_GRAY);
+        chatArea.setBackground(Color.RED);
         chatArea.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createEmptyBorder(10, 10, 10, 10),
-                BorderFactory.createLineBorder(Color.DARK_GRAY)));
+                BorderFactory.createLineBorder(Color.RED)));
         JScrollPane scrollPane = new JScrollPane(chatArea);
 
         // this section customizes specifically the main button
