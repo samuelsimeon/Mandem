@@ -11,7 +11,7 @@ public class GUI {
     private WeatherChatbot chatbot;
     private final int totalLocations = 5;
 
-
+    //.....
     // Constructor to initialize and setup the GUI components.
     public GUI() {
         // This sets Gui theme to match user system theme for a more authentic experince
