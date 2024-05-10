@@ -34,14 +34,14 @@ public class GUI {
         chatArea.setBackground(Color.RED);
         chatArea.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createEmptyBorder(10, 10, 10, 10),
-                BorderFactory.createLineBorder(Color.RED)));
+                BorderFactory.createLineBorder(Color.Black)));
         JScrollPane scrollPane = new JScrollPane(chatArea);
 
         // this section customizes specifically the main button
         startButton = new JButton("Plan My Trip");
         startButton.setFont(new Font("Arial", Font.BOLD, 14));
-        startButton.setForeground(Color.BLUE);
-        startButton.setBackground(Color.BLUE);
+        startButton.setForeground(Color.RED);
+        startButton.setBackground(Color.RED);
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
