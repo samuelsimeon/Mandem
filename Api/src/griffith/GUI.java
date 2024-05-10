@@ -49,15 +49,24 @@ public class GUI {
             }
         });
 
-        JPanel panel = new JPanel(new BorderLayout());
-        panel.add(startButton, BorderLayout.CENTER);
+        JPanel panel = new JPanel();
+        panel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        panel.add(startButton);
 
-        frame.getContentPane().add(scrollPane, BorderLayout.CENTER);
-        frame.getContentPane().add(panel, BorderLayout.SOUTH);
+        frame.getContentPane().setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        frame.getContentPane().add(scrollPane, constraints);
+        constraints.gridy = 1;
+        frame.getContentPane().add(panel, constraints);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setLocationRelativeTo(null); // Center on screen
         frame.setVisible(true);
+
     }
 
     // Method to handle the trip planning workflow.
