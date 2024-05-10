@@ -14,6 +14,12 @@ public class GUI {
 
     // Constructor to initialize and setup the GUI components.
     public GUI() {
+        // This sets Gui theme to match user system theme for a more authentic experince
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         chatbot = new WeatherChatbot();
         frame = new JFrame("Weather Chatbot");
         chatArea = new JTextArea(16, 50);
