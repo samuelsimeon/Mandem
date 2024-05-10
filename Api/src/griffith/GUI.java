@@ -37,8 +37,11 @@ public class GUI {
                 BorderFactory.createLineBorder(Color.DARK_GRAY)));
         JScrollPane scrollPane = new JScrollPane(chatArea);
 
-
+        // this section customizes specifically the main button
         startButton = new JButton("Plan My Trip");
+        startButton.setFont(new Font("Arial", Font.BOLD, 14));
+        startButton.setForeground(Color.BLUE);
+        startButton.setBackground(Color.BLUE);
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
