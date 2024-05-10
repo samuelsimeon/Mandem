@@ -94,7 +94,7 @@ public class GUI {
             chatArea.append("Failed to fetch data for " + location + " on " + day + "\n\n");
         }
     }
-
+// Main method
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
